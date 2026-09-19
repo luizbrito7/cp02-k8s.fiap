@@ -1,0 +1,64 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: store-api-2
+  namespace: store-dev
+  labels:
+    app: store-api
+    tier: backend
+    env: dev
+spec:
+  containers:
+    - name: store-api
+      image: store-api:1.0
+      imagePullPolicy: IfNotPresent
+      ports:
+        - name: http
+          containerPort: 8000
+      env:
+        - name: APP_ENV
+          value: dev
+        - name: DB_HOST
+          value: store-db.store-dev.svc.cluster.local
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+      resources:
+        requests:
+          cpu: 100m
+          memory: 128Mi
+        limits:
+          cpu: 500m
+          memory: 256Mi
+      startupProbe:
+        httpGet:
+          path: /health
+          port: http
+        failureThreshold: 30
+        periodSeconds: 2
+      readinessProbe:
+        httpGet:
+          path: /ready
+          port: http
+        initialDelaySeconds: 3
+        periodSeconds: 5
+        failureThreshold: 3
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: http
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        timeoutSeconds: 2
+        failureThreshold: 3
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop: ["ALL"]
