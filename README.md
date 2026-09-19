@@ -55,7 +55,7 @@ O objetivo é praticar Pods, Services e depuração de manifestos em Kubernetes,
 
 ## Cluster local
 
-Pré-requisitos: `docker`, `kind` e `kubectl`. A imagem `store-api:1.0` precisa existir localmente; o passo a passo do build está na apostila do curso (laboratório 2.11).
+Pré-requisitos: `docker`, `kind` e `kubectl`. A imagem `store-api:1.0` precisa existir localmente; o passo a passo do build está na apostila do curso, disponível no [repositório do professor](https://github.com/fabioBaraDev/cloud_developer) (laboratório 2.11).
 
 ```bash
 ./assets/01-setup-cluster.sh
