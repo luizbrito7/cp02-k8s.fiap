@@ -23,7 +23,7 @@
 
 </br>
 
-Este repositório contém o **Checkpoint 01** da matéria **Cloud Native Development**.
+Este repositório contém o **Checkpoint 02** da matéria **Cloud Native Development**.
 
 O objetivo é praticar Pods, Services e depuração de manifestos em Kubernetes, executando os exercícios 3.1 a 3.4 da apostila num cluster local com **kind** e documentando cada passo em PDF.
 
