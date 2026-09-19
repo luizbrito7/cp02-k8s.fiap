@@ -1,4 +1,4 @@
-# Checkpoint 01 - Cloud Native FIAP
+# Checkpoint 02 - Cloud Native FIAP
 
 <p align="center">
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  <br>
